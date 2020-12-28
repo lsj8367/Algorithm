@@ -40,6 +40,23 @@ public class ArrayList {
 		return str + "]";
 	}
 	
+	//배열리스트 값 제거하기
+	public Object remove(int index) {
+		Object removed = elementData[index];
+		for(int i = index + 1; i <= size - 1; i++) {
+			elementData[i - 1] = elementData[i]; // 하나씩 자리를 당겨옴(덮어쓰기)
+		}
+		size--;
+		elementData[size] = null; // 맨끝값이 중복되서 삭제해줌
+		return removed;
+	}
 	
+	public Object removeFirst() {
+		return remove(0);
+	}
+	
+	public Object removeLast() {
+		return remove(size - 1);
+	}
 	
 }
