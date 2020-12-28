@@ -26,11 +26,21 @@ public class Main {
 //			System.out.println(li.next());
 //		}
 		
-		while(li.hasPrevious()) {
-			System.out.println(li.previous());
+//		while(li.hasPrevious()) {
+//			System.out.println(li.previous());
+//		}
+		
+		//li.remove(); // 바로 실행할 순 없다. next로 인덱스 이동을 안해줬기 때문.
+		
+		while(li.hasNext()) {
+			int number = (int)li.next();
+			if(number == 30) {
+				//li.add(35);
+				li.remove();
+			}
 		}
 		
-		
+		System.out.println(numbers);
 		
 		
 		

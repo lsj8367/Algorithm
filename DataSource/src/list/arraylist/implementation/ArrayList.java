@@ -108,8 +108,17 @@ public class ArrayList {
 			return elementData[--nextIndex];
 		}
 		
+		// 현재 next메소드 다음에 값을 추가
+		public void add(Object element) {
+			ArrayList.this.add(nextIndex++, element);
+		}
 		
-		
+		//현재 next메소드의 index를 제거
+		//최초에 remove를 실행할 수는없음.
+		public void remove() { 
+			ArrayList.this.remove(nextIndex - 1);
+			nextIndex--;
+		}
 		
 		
 	}
