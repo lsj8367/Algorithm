@@ -10,9 +10,23 @@ public class Main {
 		numbers.addLast(40);
 		//numbers.add(1, 15);
 		//numbers.addFirst(5);
-		System.out.println(numbers.remove(1));
+		//System.out.println(numbers.remove(1));
+		//System.out.println(numbers.removeLast());
 		
-		System.out.println(numbers);
+		//System.out.println(numbers.get(0));
+		
+		//System.out.println(numbers.indexOf(20));
+		
+//		for(int i = 0; i < numbers.size(); i++) {
+//			System.out.println(numbers.get(i));
+//		}
+		
+		ArrayList.ListIterator li = numbers.listIterator();
+		
+		System.out.println(li.next());
+		System.out.println(li.next());
+		System.out.println(li.next());
+		System.out.println(li.next());
 	}
 
 }

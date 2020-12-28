@@ -36,7 +36,6 @@ public class ArrayList {
 				str += ",";				
 			}
 		}
-		
 		return str + "]";
 	}
 	
@@ -51,12 +50,51 @@ public class ArrayList {
 		return removed;
 	}
 	
+	//맨 앞값 지우기
 	public Object removeFirst() {
 		return remove(0);
 	}
 	
+	//맨 끝값 지우기
 	public Object removeLast() {
 		return remove(size - 1);
 	}
 	
+	//n번째 값 가져오기
+	public Object get(int index) {
+		// 장점 : 데이터 처리속도가 빠르다.
+		return elementData[index];
+	}
+	
+	public int size() { // arraylist의 크기
+		return size;
+	}
+	
+	// 값이 있는지 확인
+	public int indexOf(Object o) {
+		for(int i = 0; i < size; i++) {
+			if(o.equals(elementData[i])) {
+				return i; //존재하면 존재하는 index출력	
+			}
+		}
+		return -1; //존재하지 않으면 출력
+	}
+	
+	//메소드의 호출로 객체 생성
+	public ListIterator listIterator() {
+		return new ListIterator();
+	}
+
+	class ListIterator {
+		private int nextIndex = 0;
+		
+		public Object next() {
+//			Object returnData = elementData[nextIndex]; 
+//			nextIndex++;
+//			return returnData;
+			
+			return elementData[nextIndex++];
+		}
+		
+	}
 }
