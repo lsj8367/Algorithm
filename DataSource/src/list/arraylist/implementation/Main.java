@@ -22,11 +22,18 @@ public class Main {
 //		}
 		
 		ArrayList.ListIterator li = numbers.listIterator();
+//		while(li.hasNext()) {//true 했을시 최대크기 이후가 되면 error 발생.
+//			System.out.println(li.next());
+//		}
 		
-		System.out.println(li.next());
-		System.out.println(li.next());
-		System.out.println(li.next());
-		System.out.println(li.next());
+		while(li.hasPrevious()) {
+			System.out.println(li.previous());
+		}
+		
+		
+		
+		
+		
+		
 	}
-
 }

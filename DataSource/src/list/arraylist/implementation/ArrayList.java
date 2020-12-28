@@ -88,13 +88,29 @@ public class ArrayList {
 	class ListIterator {
 		private int nextIndex = 0;
 		
+		//배열에서 현재값의 다음값 존재유무 확인
+		public boolean hasNext() {
+			return nextIndex < size();
+		}
+		
 		public Object next() {
 //			Object returnData = elementData[nextIndex]; 
 //			nextIndex++;
 //			return returnData;
-			
 			return elementData[nextIndex++];
 		}
+		
+		public boolean hasPrevious() {
+			return nextIndex > 0;
+		}
+		
+		public Object previous() { // 배열의 인덱스는 -1이 들어갈수 없어서 길이보다 많게 호출할시 에러 발생
+			return elementData[--nextIndex];
+		}
+		
+		
+		
+		
 		
 	}
 }
