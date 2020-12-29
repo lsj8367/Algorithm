@@ -123,10 +123,58 @@ public class LinkedList {
 		return size;
 	}
 	
+	// value값 출력
 	public Object get(int k) {
 		Node temp = node(k);
 		return temp.data;
 	}
+	
+	//index번호 찾기
+	public int indexOf(Object data) {
+		Node temp = head;
+		int index = 0;
+		while(temp.data != data) {
+			temp = temp.next;
+			index++;
+			if(temp == null) {
+				return -1; //검색 끝에 도달해도 없다면
+			}
+		}
+		return index;
+	}
+	
+	public ListIterator listIterator() {
+		return new ListIterator();
+	}
+	
+	
+	public class ListIterator{
+		private Node next;
+		private Node lastReturned;
+		private int nextIndex;
+		
+		ListIterator(){
+			next = head; // next변수 head초기화
+		}
+		public Object next() {
+			lastReturned = next; //현재 노드가 lastReturned에 기록
+			next = next.next; //현재의 다음노드로 바꿈
+			nextIndex++;
+			
+			return lastReturned.data;
+		}
+		
+		public boolean hasNext() {
+			return nextIndex < size();
+		}
+		
+		
+		
+		
+		
+		
+	}
+	
 	
 	
 	

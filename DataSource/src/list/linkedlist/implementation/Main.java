@@ -10,11 +10,12 @@ public class Main {
 //		System.out.println(numbers.node(0)); 외부에서 사용하지 못하게 해야된다.
 //		numbers.add(1, 15);
 //		System.out.println(numbers.removeFirst());
-		
-		System.out.println(numbers.get(0));
-		System.out.println(numbers);
-		
-		
-		
+//		System.out.println(numbers);
+		LinkedList.ListIterator i = numbers.listIterator();
+		System.out.println(i.next());
+		System.out.println(i.next());
+		System.out.println(i.hasNext());
+		System.out.println(i.next());
+		System.out.println(i.hasNext());
 	}
 }
