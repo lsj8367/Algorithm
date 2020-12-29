@@ -65,6 +65,32 @@ public class LinkedList {
 		}
 	}
 	
+	public String toString() {
+		if(head == null) {
+			return "[]";
+		}
+		Node temp = head;
+		String str = "[";
+		
+		while(temp.next != null) { //리스트 길이가 null이 아니면
+			str += temp.data + ", "; //그 인덱스의 값, 를 이어줌
+			temp = temp.next; //다음값으로 바꿈
+		}
+		str += temp.data;
+		
+		return str + "]";
+	}
+	
+	//첫번째 값 지우기
+	public Object removeFirst() {
+		Node temp = head; //head값을  temp Node에 저장을 한다.
+		head = head.next; //head를 다음값으로 바꿔줌
+		Object returnData = temp.data; //삭제할값의 데이터를 돌려주고
+		temp = null; //temp를 비움
+		size--;
+		
+		return returnData;
+	}
 	
 	
 }
