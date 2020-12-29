@@ -40,7 +40,8 @@ public class LinkedList {
 		}	
 	}
 	
-	Node node(int index) { //조회하는 메소드
+	//조회하는 메소드
+	Node node(int index) { 
 		Node x = head;
 		for(int i = 0; i < index; i++) {
 			x = x.next; //계속 다음값을 호출			
@@ -48,6 +49,7 @@ public class LinkedList {
 		return x;
 	}
 	
+	//추가 메소드
 	public void add(int k, Object input) {
 		if(k == 0) {
 			addFirst(input);
@@ -65,6 +67,7 @@ public class LinkedList {
 		}
 	}
 	
+	//문자열 반환 println
 	public String toString() {
 		if(head == null) {
 			return "[]";
@@ -92,6 +95,7 @@ public class LinkedList {
 		return returnData;
 	}
 	
+	//삭제하기
 	public Object remove(int k) {
 		if(k == 0) {
 			return removeFirst();
@@ -108,5 +112,22 @@ public class LinkedList {
 		size--;
 		return returnData;
 	}
+	
+	//끝값 삭제
+	public Object removeLast() {
+		return remove(size-1);
+	}
+	
+	//LinkedList의 크기 조회
+	public int size() {
+		return size;
+	}
+	
+	public Object get(int k) {
+		Node temp = node(k);
+		return temp.data;
+	}
+	
+	
 	
 }
