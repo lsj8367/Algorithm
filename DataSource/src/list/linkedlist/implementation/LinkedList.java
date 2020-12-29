@@ -92,5 +92,21 @@ public class LinkedList {
 		return returnData;
 	}
 	
+	public Object remove(int k) {
+		if(k == 0) {
+			return removeFirst();
+		}
+		Node temp = node(k - 1); // 해당하는 것의 이전 주소를 알아냄
+		Node todoDeleted = temp.next; //삭제하려는 노드
+		temp.next = temp.next.next;
+		Object returnData = todoDeleted.data;
+		
+		if(todoDeleted == tail) { //삭제하는게 끝값이라면
+			tail = temp;
+		}
+		todoDeleted = null;
+		size--;
+		return returnData;
+	}
 	
 }
