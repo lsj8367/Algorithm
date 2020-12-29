@@ -11,11 +11,21 @@ public class Main {
 //		numbers.add(1, 15);
 //		System.out.println(numbers.removeFirst());
 //		System.out.println(numbers);
+		
+		
 		LinkedList.ListIterator i = numbers.listIterator();
+/*	
 		System.out.println(i.next());
 		System.out.println(i.next());
 		System.out.println(i.hasNext());
-		System.out.println(i.next());
+		System.out.println(i.next()); //이 다음 노드는 존재하지 않음.
 		System.out.println(i.hasNext());
+*/
+		while(i.hasNext()) {
+			System.out.println(i.next());
+		}
+		
+		
+		
 	}
 }

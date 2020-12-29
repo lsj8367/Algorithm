@@ -156,6 +156,7 @@ public class LinkedList {
 		ListIterator(){
 			next = head; // next변수 head초기화
 		}
+		// 다음값 출력
 		public Object next() {
 			lastReturned = next; //현재 노드가 lastReturned에 기록
 			next = next.next; //현재의 다음노드로 바꿈
@@ -164,8 +165,9 @@ public class LinkedList {
 			return lastReturned.data;
 		}
 		
+		// 다음값이 있는지 확인
 		public boolean hasNext() {
-			return nextIndex < size();
+			return nextIndex < size(); //size와 nextIndex가 같으면 null도 출력되기 때문에 작을때만 True
 		}
 		
 		
