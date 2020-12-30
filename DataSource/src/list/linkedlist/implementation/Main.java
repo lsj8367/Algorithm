@@ -21,9 +21,9 @@ public class Main {
 		System.out.println(i.next()); //이 다음 노드는 존재하지 않음.
 		System.out.println(i.hasNext());
 */
-		while(i.hasNext()) {
-			System.out.println(i.next());
-		}
+//		while(i.hasNext()) {
+//			System.out.println(i.next());
+//		}
 		
 		
 		
