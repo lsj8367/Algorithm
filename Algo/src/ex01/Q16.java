@@ -34,6 +34,6 @@ public class Q16 {
 				System.out.print(i);
 			}
 			System.out.println();
-		}		
+		}
 	}
 }

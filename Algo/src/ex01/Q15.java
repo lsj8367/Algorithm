@@ -28,15 +28,16 @@ public class Q15 {
 			System.out.println();
 		}
 	}
+	
 	static void triangleLU(int n) { //왼쪽 위가 직각인 이등변 삼각형 출력
 		for(int i = 0; i < n; i++) {
 			for(int j = n; j > i; j--) {
 				System.out.print("*");
 			}
 			System.out.println();
-		}
-		
+		}	
 	}
+	
 	static void triangleRU(int n) { //오른쪽 위가 직각인 이등변 삼각형 출력
 		for(int i = 0; i < n; i++) {
 			for(int j = 0; j < i; j++) {
@@ -47,9 +48,8 @@ public class Q15 {
 			}
 			System.out.println();
 		}
-		
-		
 	}
+	
 	static void triangleRB(int n) { //오른쪽 아래가 직각인 이등변 삼각형 출력
 		for(int i = 0; i < n; i++) {
 			for(int j = n - 1; j > i; j--) {
@@ -61,9 +61,4 @@ public class Q15 {
 			System.out.println();
 		}
 	}
-	
-	
-	
-	
-	
 }
