@@ -6,8 +6,9 @@ public class Q16 {
 	public static void main(String[] args) {
 		// 피라미드 별찍기
 		Scanner sc = new Scanner(System.in);
-		//int n = sc.nextInt();
-		int n = 4;
+		System.out.println("숫자 입력 : ");
+		int n = sc.nextInt();
+		//int n = 4;
 		spira(n);
 		npira(n);
 
