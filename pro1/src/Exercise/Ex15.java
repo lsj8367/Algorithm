@@ -35,8 +35,8 @@ public class Ex15 {
 					System.out.print(j + " * " + i + " = " + result + "   ");
 				}
 				System.out.println();
-				System.out.println("계속하나요? (y/n)");
 			}
+			//System.out.println("계속하나요? (y/n)");
 		}else if(a.equals("n")){
 			System.out.println("프로그램을 종료합니다");
 			break;
