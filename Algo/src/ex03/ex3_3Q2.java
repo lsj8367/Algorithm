@@ -66,8 +66,7 @@ public class ex3_3Q2 {
 				System.out.println(searchValue + "는  x[" + index + "]에 있습니다.");
 				break;
 			}
-			
-			
+
 			index++;
 		}
 	}
@@ -86,15 +85,13 @@ public class ex3_3Q2 {
 		StringBuffer star = new StringBuffer("  *");
 		
 		System.out.print("   |"); // 별찍는 1줄
-		if(index == 0) {
-			System.out.print(star);
-		}else {
-			for(int i = 1; i <= index; i++) {
+		if (index != 0) {
+			for (int i = 1; i <= index; i++) {
 				star.insert(0, "   ");
-			}			
-			System.out.print(star);
+			}
 		}
-		
+		System.out.print(star);
+
 		System.out.println();
 	}
 	
