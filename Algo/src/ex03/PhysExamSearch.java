@@ -1,8 +1,11 @@
 package ex03;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
+
+import static ex03.PhysExamSearch.PhyscData.HEIGHT_ORDER;
 
 //신체검사 데이터 배열에서 이진 검색하기
 public class PhysExamSearch {
@@ -10,17 +13,15 @@ public class PhysExamSearch {
     static class PhyscData{
         private String name;    //이름
         private int height;     //키
-        private double vision;  //시력
 
-        public PhyscData(String name, int height, double vision){
+        public PhyscData(String name, int height){
             this.name = name;
             this.height = height;
-            this.vision = vision;
         }
 
         //문자열 반환
         public String toString(){
-            return name + " " + height + " " + vision;
+            return name + " " + height;
         }
 
         //오름차순 정렬 Comparator
@@ -38,26 +39,23 @@ public class PhysExamSearch {
 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        PhyscData[] x = {
-                new PhyscData("홍길동", 178, 0.4),
-                new PhyscData("고길동", 163, 1.5),
-                new PhyscData("가나다", 162, 1.7),
-                new PhyscData("신기해", 161, 2.0),
-                new PhyscData("엄석대", 153, 1.6),
-                new PhyscData("태극기", 168, 0.1),
-                new PhyscData("한국인", 184, 1.7),
+        PhyscData[] x = { //키순으로 정렬해야한다.
+                new PhyscData("홍길동", 171),
+                new PhyscData("고길동", 172),
+                new PhyscData("가나다", 173),
+                new PhyscData("신기해", 174),
+                new PhyscData("엄석대", 175),
+                new PhyscData("태극기", 176),
+                new PhyscData("한국인", 177),
         };
-        System.out.println(x.length);
-        for(PhyscData xval : x){
-            System.out.println(xval);
-        }
+
         System.out.println("찾고싶은 신장을 입력해주세요. cm"); //키 값 입력받기
         int height = sc.nextInt();
 
         int idx = Arrays.binarySearch(
                 x,                                             // 배열 x에서
-                new PhyscData("", height, 0.0),   // 키가 height인 요소를
-                PhyscData.HEIGHT_ORDER                        // HEIGHT_ORDER에 의해 검색함
+                new PhyscData("", height),   // 키가 height인 요소를
+                HEIGHT_ORDER                        // HEIGHT_ORDER에 의해 검색함
         );
 
         System.out.println(idx);
