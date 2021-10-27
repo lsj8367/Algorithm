@@ -13,14 +13,14 @@ public class OddEven {
 
     @ParameterizedTest
     @MethodSource
-    void solution(int num, boolean expected) {
+    void solution(int num, String expected) {
         assertThat(oddEvenChecker.solution(num)).isEqualTo(expected);
     }
 
     private static Stream<Arguments> solution() {
         return Stream.of(
-            Arguments.of(5, false),
-            Arguments.of(6, true)
+            Arguments.of(5, "Odd"),
+            Arguments.of(6, "Even")
         );
     }
 
