@@ -6,23 +6,23 @@ import java.io.InputStreamReader;
 
 public class Ex1_02 {
 
-    public static void solution(char[] charArr) {
-        for (int i = 0; i < charArr.length; i++) {
-            if (Character.isLowerCase(charArr[i])) {
-                charArr[i] = Character.toUpperCase(charArr[i]);
-            } else if (Character.isUpperCase(charArr[i])) {
-                charArr[i] = Character.toLowerCase(charArr[i]);
+    public static String solution(char[] charArr) {
+        String answer = "";
+        for (char c : charArr) {
+            if (Character.isLowerCase(c)) {
+                answer += Character.toUpperCase(c);
+            } else if (Character.isUpperCase(c)) {
+                answer += Character.toLowerCase(c);
             }
         }
-        for (int i = 0; i < charArr.length; i++) {
-            System.out.print(charArr[i]);
-        }
+
+        return answer;
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         char[] charArr = br.readLine().toCharArray();
 
-        solution(charArr);
+        System.out.println(solution(charArr));
     }
 }
