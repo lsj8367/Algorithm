@@ -1,4 +1,4 @@
-package javaclass;
+package javaclass.ex1;
 
 import java.util.Scanner;
 
