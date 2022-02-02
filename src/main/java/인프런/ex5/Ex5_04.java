@@ -14,18 +14,12 @@ public class Ex5_04 {
 
     private static int solution(final String ss) {
         final char[] chars = ss.toCharArray();
-
         Stack<Integer> stack = new Stack<>();
 
-        int answer = 0;
-        int number1 = 0;
-        int number2 = 0;
-
         for (char aChar : chars) {
-
             if (isOperator(aChar)) {
-                number2 = stack.pop();
-                number1 = stack.pop();
+                int number2 = stack.pop();
+                int number1 = stack.pop();
 
                 stack.push(postfix(number1, number2, aChar));
             } else {
