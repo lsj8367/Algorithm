@@ -1,4 +1,4 @@
-package programmers;
+package programmers.lv1;
 
 public class 정수제곱근판별 {
 

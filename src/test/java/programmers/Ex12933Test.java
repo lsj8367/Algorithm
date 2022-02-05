@@ -1,8 +1,8 @@
 package programmers;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.jupiter.api.Test;
+import programmers.lv1.Ex12933;
 
 public class Ex12933Test {
 
