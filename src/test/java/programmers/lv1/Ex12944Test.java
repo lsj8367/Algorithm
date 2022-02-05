@@ -1,30 +1,25 @@
-package programmers;
-
-// 최대공약수, 최소공배수
+package programmers.lv1;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class Ex12940Test {
+public class Ex12944Test {
 
-    Ex12940 ex12940 = new Ex12940();
-
-
+    Ex12944 ex12944 = new Ex12944();
 
     @ParameterizedTest
     @MethodSource
-    void solution(int n, int m, int[] expected) {
-        assertThat(ex12940.solution(n, m)).isEqualTo(expected);
+    void solution(int[] arr, double expected) {
+        assertThat(ex12944.solution(arr)).isEqualTo(expected);
     }
 
     private static Stream<Arguments> solution() {
         return Stream.of(
-            Arguments.of(3, 12, new int[]{3, 12}),
-            Arguments.of(2, 5, new int[]{1, 10})
+            Arguments.of(new int[]{1, 2, 3, 4}, 2.5),
+            Arguments.of(new int[]{5, 5}, 5)
         );
     }
 

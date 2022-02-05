@@ -1,4 +1,4 @@
-package programmers;
+package programmers.lv1;
 
 public class Ex12940 {
     public int[] solution(int n, int m) {
