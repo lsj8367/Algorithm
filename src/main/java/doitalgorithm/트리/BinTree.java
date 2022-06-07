@@ -78,30 +78,30 @@ public class BinTree<K, V> {
         boolean isLeftChild = true; //p는 부모의 왼쪽인가
 
         while (true) {
-            if (p == null) {
-                return false;
+            if (p == null) { //더이상 진행 x
+                return false; //키 값이 없음
             }
 
-            int comp = comp(key, p.getKey());
+            int comp = comp(key, p.getKey()); // key, p값의 키 비교
 
-            if (comp == 0) {
+            if (comp == 0) { //같으면 성공
                 break;
-            } else {
+            } else { //내려가기전 부모노드 설정
                 parent = p;
-                if (comp < 0) {
-                    isLeftChild = true;
-                    p = p.left;
+                if (comp < 0) { //주어진 키가 현재 노드 키보다 작으면
+                    isLeftChild = true; //왼쪽으로 감
+                    p = p.left; //현재노드를 왼쪽 자식노드로 변경
                 } else {
-                    isLeftChild = false;
-                    p = p.right;
+                    isLeftChild = false; //오른쪽으로 감
+                    p = p.right; //현재노드를 오른쪽 자식노드로 변경
                 }
             }
         }
 
-        if (p.left == null) { //p 왼쪽 노드가 없음
-            if (p == root) {
-                root = p.right;
-            } else if (isLeftChild) {
+        if (p.left == null) { //위에서 왼쪽 자식노드가 된 상태에서 다시 왼쪽 자식 노드가 null이면
+            if (p == root) { // p가 루트라면
+                root = p.right; // 오른쪽으로 1depth 증가
+            } else if (isLeftChild) { //
                 parent.left = p.right;
             } else {
                 parent.right = p.right;
