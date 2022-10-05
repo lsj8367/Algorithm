@@ -1,20 +1,30 @@
 package programmers.lv2;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.jupiter.api.Test;
+import java.util.stream.Stream;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
-public class Ex92335 {
+class Ex92335 {
 
-    @Test
-    void test() {
-        assertThat(solution(437674, 3)).isEqualTo(3);
-        assertThat(solution(110011, 10)).isEqualTo(2);
-        assertThat(solution(1000001, 10)).isEqualTo(0);
-        assertThat(solution(2047, 2)).isEqualTo(0);
-        assertThat(solution(797161, 3)).isEqualTo(0);
+    @ParameterizedTest
+    @MethodSource
+    void test(final int actual, final int expected) {
+        assertThat(actual).isEqualTo(expected);
     }
 
-    public int solution(int n, int k) {
+    private static Stream<Arguments> test() {
+        return Stream.of(
+            Arguments.of(solution(437674, 3), 3),
+            Arguments.of(solution(110011, 10), 2),
+            Arguments.of(solution(1000001, 10), 0),
+            Arguments.of(solution(2047, 2), 0),
+            Arguments.of(solution(797161, 3), 0)
+        );
+    }
+
+    private static int solution(int n, int k) {
         // n 은 숫자
         // k 는 진법
         final String s = Integer.toString(n, k);
@@ -27,7 +37,6 @@ public class Ex92335 {
             if ("".equals(num)) {
                 continue;
             }
-            System.out.println(num);
 
             if (isPrime(Long.parseLong(num))) {
                 count++;
@@ -53,7 +62,7 @@ public class Ex92335 {
 //        return true;
 //    }
 
-    private boolean isPrime(long number) {
+    private static boolean isPrime(long number) {
         if (number < 2) {
             return false;
         }
