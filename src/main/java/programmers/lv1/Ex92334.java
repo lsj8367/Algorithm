@@ -3,31 +3,34 @@ package programmers.lv1;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Ex92334 {
 
     public int[] solution(String[] id_list, String[] report, int k) {
         int[] answer = new int[id_list.length];
 
-        Map<String, HashSet<String>> reportMap = new HashMap<>();
-        Map<String, Integer> indexMap = new HashMap<>();
+        Map<String, Set<String>> map = new HashMap<>();
+        Map<String, Integer> resultMap = new HashMap<>();
 
         for (int i = 0; i < id_list.length; i++) {
-            reportMap.put(id_list[i], new HashSet<>());
-            indexMap.put(id_list[i], i);
+            map.put(id_list[i], new HashSet<>());
+            resultMap.put(id_list[i], i);
         }
 
-        for (String sentence : report) {
-            final String[] nameArr = sentence.split(" ");
-            reportMap.get(nameArr[1]).add(nameArr[0]);
+        for (String r : report) {
+            final String[] ids = r.split(" ");
+            String a = ids[0]; // 이용자 id
+            String b = ids[1]; // 신고당한 id
+
+            map.get(b).add(a);
         }
 
-        for (int i = 0; i < id_list.length; i++) {
-            final HashSet<String> reportCount = reportMap.get(id_list[i]);
-
-            if (reportCount.size() >= k) {
-                for (String name : reportCount) {
-                    answer[indexMap.get(name)]++;
+        for (String name : id_list) {
+            final Set<String> reportSet = map.get(name);
+            if (reportSet.size() >= k) {
+                for (String s : reportSet) {
+                    answer[resultMap.get(s)]++;
                 }
             }
         }
