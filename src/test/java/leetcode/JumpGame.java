@@ -1,5 +1,7 @@
 package leetcode;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class JumpGame {
@@ -23,7 +25,7 @@ public class JumpGame {
 
     @Test
     void test() {
-        System.out.println(canJump(new int[]{2, 5, 0, 0}));
+        assertThat(canJump(new int[]{2, 5, 0, 0})).isTrue();
     }
 
 }
