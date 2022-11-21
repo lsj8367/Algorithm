@@ -28,5 +28,6 @@ class JumpGame2 {
     @Test
     void test() {
         assertThat(jump(new int[]{2, 3, 1, 1, 4})).isEqualTo(2);
+        assertThat(jump(new int[]{2, 3, 0, 1, 4})).isEqualTo(2);
     }
 }
