@@ -7,6 +7,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+/**
+ * 각 자식 i는 자식이 만족할 쿠키의 최소 크기인 배열 인자 g[i]를 가진다.
+ * 각 쿠키 j의 크기는 s[j]입니다.
+ * s[j] >= g[i]이면 쿠키 j를 자식 i에 할당할 수 있다면 쿠키를 받을 수 있다.
+ * 쿠키를 받는 애들 명수를 출력
+ */
 class AssignCookie {
 
     @MethodSource
@@ -36,10 +42,8 @@ class AssignCookie {
             if (g[i] <= s[j]) {
                 result++;
                 i++;
-                j++;
-            } else {
-                j++;
             }
+            j++;
         }
 
         return result;

@@ -1,13 +1,14 @@
 package leetcode;
 
-import org.assertj.core.api.Assertions;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.Test;
 
 class LemonadeChange {
 
     @Test
     void test() {
-        Assertions.assertThat(lemonadeChange(new int[]{5, 5, 5, 10, 20})).isTrue();
+        assertThat(lemonadeChange(new int[]{5, 5, 5, 10, 20})).isTrue();
     }
 
     private boolean lemonadeChange(final int[] bills) {
